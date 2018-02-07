@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import * as actions from "../actions";
 
 class Header extends Component {
 	renderContent() {
@@ -15,7 +16,7 @@ class Header extends Component {
 			default:
 				return (
 					<li>
-						<a href="/api/logout">Logout</a>
+						<a onClick={this.props.logout}>Logout</a>
 					</li>
 				);
 		}
@@ -39,4 +40,4 @@ function mapStateToProps({ auth }) {
 	return { auth: auth };
 }
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps, actions)(Header);

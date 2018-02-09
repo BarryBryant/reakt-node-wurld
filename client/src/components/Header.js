@@ -17,10 +17,10 @@ class Header extends Component {
 				);
 			default:
 				return [
-					<li>
+					<li key="1">
 						<Payments />
 					</li>,
-					<li>
+					<li key="2">
 						<Link to="/" onClick={this.props.logout}>
 							Logout
 						</Link>
